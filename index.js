@@ -7,11 +7,14 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
+// database connection
 db();
 
+// middlewares
 app.use(express.json());
 app.use(cors());
 
+// routes
 app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/password-reset", passwordReset);
